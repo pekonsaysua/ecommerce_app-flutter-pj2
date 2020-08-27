@@ -82,153 +82,156 @@ class _ProductManagerState extends State<ProductManager> {
                       showDialog(
                           context: context,
                           builder: (context) => Dialog(
-                                child: Container(
-                                  height: ConstScreen.setSizeHeight(750),
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal:
-                                            ConstScreen.setSizeWidth(30),
-                                        vertical:
-                                            ConstScreen.setSizeHeight(20)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.stretch,
-                                      children: <Widget>[
-                                        Center(
-                                          child: Text(
-                                            'Edit Product',
-                                            style: kBoldTextStyle.copyWith(
-                                                fontSize: FontSize.s36,
-                                                color: kColorBlack),
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.vertical,
+                                  child: Container(
+                                    height: ConstScreen.setSizeHeight(740),
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal:
+                                              ConstScreen.setSizeWidth(30),
+                                          vertical:
+                                              ConstScreen.setSizeHeight(15)),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        children: <Widget>[
+                                          Center(
+                                            child: Text(
+                                              'Sửa sản phẩm',
+                                              style: kBoldTextStyle.copyWith(
+                                                  fontSize: FontSize.s36,
+                                                  color: kColorBlack),
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: ConstScreen.setSizeHeight(40),
-                                        ),
-                                        //TODO: product name
-                                        InputTextProduct(
-                                          title: 'Product Name',
-                                          initValue: document['name'],
-                                          inputType: TextInputType.text,
-                                          onValueChange: (name) {
-                                            productName = name;
-                                          },
-                                        ),
-                                        SizedBox(
-                                          height: ConstScreen.setSizeHeight(15),
-                                        ),
-                                        //TODO:quantity
-                                        InputTextProduct(
-                                          title: 'Quantity',
-                                          initValue: document['quantity'],
-                                          inputType: TextInputType.number,
-                                          onValueChange: (qty) {
-                                            quantity = qty;
-                                          },
-                                        ),
-                                        SizedBox(
-                                          height: ConstScreen.setSizeHeight(15),
-                                        ),
-                                        //TODO: Price
-                                        InputTextProduct(
-                                          title: 'Price',
-                                          initValue: document['price'],
-                                          inputType: TextInputType.number,
-                                          onValueChange: (value) {
-                                            price = value;
-                                          },
-                                        ),
-                                        SizedBox(
-                                          height: ConstScreen.setSizeHeight(15),
-                                        ),
-                                        //TODO: Sale price
-                                        InputTextProduct(
-                                          title: 'Sale Price',
-                                          initValue: document['sale_price'],
-                                          inputType: TextInputType.number,
-                                          onValueChange: (value) {
-                                            salePrice = value;
-                                          },
-                                        ),
-                                        SizedBox(
-                                          height: ConstScreen.setSizeHeight(20),
-                                        ),
-                                        Row(
-                                          children: <Widget>[
-                                            Expanded(
-                                              flex: 1,
-                                              child: CusRaisedButton(
-                                                title: 'SAVE',
-                                                backgroundColor: kColorBlack,
-                                                onPress: () {
-                                                  Firestore.instance
-                                                      .collection('Products')
-                                                      .document(document['id'])
-                                                      .updateData({
-                                                    'name': (productName !=
-                                                                null &&
-                                                            productName != '')
-                                                        ? productName
-                                                        : document['name'],
-                                                    'quantity': (quantity !=
-                                                                null &&
-                                                            quantity != '')
-                                                        ? quantity
-                                                        : document['quantity'],
-                                                    'price': (price != null &&
-                                                            price != '')
-                                                        ? price
-                                                        : document['price'],
-                                                    'sale_price': (salePrice !=
-                                                                null &&
-                                                            salePrice != '')
-                                                        ? salePrice
-                                                        : document['salePrice'],
-                                                  });
-                                                  // TODO: save Price volatility
-                                                  if ((constPrice != price ||
-                                                          constSalePrice !=
-                                                              salePrice) &&
-                                                      (price != '' &&
-                                                          salePrice != '')) {
+                                          SizedBox(
+                                            height: ConstScreen.setSizeHeight(40),
+                                          ),
+                                          //TODO: product name
+                                          InputTextProduct(
+                                            title: 'Tên sản phẩm',
+                                            initValue: document['name'],
+                                            inputType: TextInputType.text,
+                                            onValueChange: (name) {
+                                              productName = name;
+                                            },
+                                          ),
+                                          SizedBox(
+                                            height: ConstScreen.setSizeHeight(15),
+                                          ),
+                                          //TODO:quantity
+                                          InputTextProduct(
+                                            title: 'Số lượng',
+                                            initValue: document['quantity'],
+                                            inputType: TextInputType.number,
+                                            onValueChange: (qty) {
+                                              quantity = qty;
+                                            },
+                                          ),
+                                          SizedBox(
+                                            height: ConstScreen.setSizeHeight(15),
+                                          ),
+                                          //TODO: Price
+                                          InputTextProduct(
+                                            title: 'Giá',
+                                            initValue: document['price'],
+                                            inputType: TextInputType.number,
+                                            onValueChange: (value) {
+                                              price = value;
+                                            },
+                                          ),
+                                          SizedBox(
+                                            height: ConstScreen.setSizeHeight(15),
+                                          ),
+                                          //TODO: Sale price
+                                          InputTextProduct(
+                                            title: 'Giá khuyến mãi',
+                                            initValue: document['sale_price'],
+                                            inputType: TextInputType.number,
+                                            onValueChange: (value) {
+                                              salePrice = value;
+                                            },
+                                          ),
+                                          SizedBox(
+                                            height: ConstScreen.setSizeHeight(20),
+                                          ),
+                                          Row(
+                                            children: <Widget>[
+                                              Expanded(
+                                                flex: 1,
+                                                child: CusRaisedButton(
+                                                  title: 'LƯU',
+                                                  backgroundColor: kColorBlack,
+                                                  onPress: () {
                                                     Firestore.instance
-                                                        .collection(
-                                                            'PriceVolatility')
-                                                        .document()
-                                                        .setData({
-                                                      'product_id': productId,
-                                                      'price': price,
-                                                      'sale_price': salePrice,
-                                                      'create_at':
-                                                          DateTime.now()
-                                                              .toString(),
-                                                      'timeCreate': DateTime
-                                                              .now()
-                                                          .millisecondsSinceEpoch
+                                                        .collection('Products')
+                                                        .document(document['id'])
+                                                        .updateData({
+                                                      'name': (productName !=
+                                                                  null &&
+                                                              productName != '')
+                                                          ? productName
+                                                          : document['name'],
+                                                      'quantity': (quantity !=
+                                                                  null &&
+                                                              quantity != '')
+                                                          ? quantity
+                                                          : document['quantity'],
+                                                      'price': (price != null &&
+                                                              price != '')
+                                                          ? price
+                                                          : document['price'],
+                                                      'sale_price': (salePrice !=
+                                                                  null &&
+                                                              salePrice != '')
+                                                          ? salePrice
+                                                          : document['salePrice'],
                                                     });
-                                                  }
-                                                  Navigator.pop(context);
-                                                },
+                                                    // TODO: save Price volatility
+                                                    if ((constPrice != price ||
+                                                            constSalePrice !=
+                                                                salePrice) &&
+                                                        (price != '' &&
+                                                            salePrice != '')) {
+                                                      Firestore.instance
+                                                          .collection(
+                                                              'PriceVolatility')
+                                                          .document()
+                                                          .setData({
+                                                        'product_id': productId,
+                                                        'price': price,
+                                                        'sale_price': salePrice,
+                                                        'create_at':
+                                                            DateTime.now()
+                                                                .toString(),
+                                                        'timeCreate': DateTime
+                                                                .now()
+                                                            .millisecondsSinceEpoch
+                                                      });
+                                                    }
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              width:
-                                                  ConstScreen.setSizeHeight(20),
-                                            ),
-                                            Expanded(
-                                              flex: 1,
-                                              child: CusRaisedButton(
-                                                title: 'CANCEL',
-                                                backgroundColor:
-                                                    kColorLightGrey,
-                                                onPress: () {
-                                                  Navigator.pop(context);
-                                                },
+                                              SizedBox(
+                                                width:
+                                                    ConstScreen.setSizeHeight(20),
                                               ),
-                                            ),
-                                          ],
-                                        )
-                                      ],
+                                              Expanded(
+                                                flex: 1,
+                                                child: CusRaisedButton(
+                                                  title: 'HUỶ',
+                                                  backgroundColor:
+                                                      kColorLightGrey,
+                                                  onPress: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

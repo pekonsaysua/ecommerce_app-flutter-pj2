@@ -48,7 +48,7 @@ class OrderCard extends StatelessWidget {
                   ),
                   children: [
                     TextSpan(
-                      text: 'Id: ',
+                      text: 'ID: ',
                     ),
                     TextSpan(
                       text: id,
@@ -217,7 +217,7 @@ class OrderCard extends StatelessWidget {
                           width: ConstScreen.setSizeWidth(7),
                         ),
                         Text(
-                          'Hủy',
+                          'Huỷ bỏ',
                           style: kBoldTextStyle.copyWith(
                               color: isEnableCancel
                                   ? kColorBlue

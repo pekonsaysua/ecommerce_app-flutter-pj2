@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce/src/helpers/screen.dart';
 import 'package:ecommerce/src/views/HomePage/Customer/HomePage/product_list_view.dart';
 import 'package:ecommerce/src/widgets/banner.dart';
-import 'package:ecommerce/src/widgets/icon_shop.dart';
+import 'package:ecommerce/src/widgets/icon_instacop.dart';
 
 class CustomerHomePageView extends StatefulWidget {
   @override

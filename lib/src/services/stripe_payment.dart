@@ -119,7 +119,7 @@ class StripeService {
   static getPlatformExceptionErrorResult(err) {
     String message = 'Something went wrong';
     if (err.code == 'cancelled') {
-      message = 'Transaction cancelled';
+      message = 'Huỷ giao dịch';
     }
 
     return new StripeTransactionResponse(clientSecret: message, success: false);

@@ -1,3 +1,4 @@
+import 'package:ecommerce/src/helpers/shared_preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/src/helpers/TextStyle.dart';
 import 'package:ecommerce/src/helpers/colors_constant.dart';
@@ -5,6 +6,7 @@ import 'package:ecommerce/src/helpers/screen.dart';
 import 'package:ecommerce/src/views/Register/SignIn/sign_in_controller.dart';
 import 'package:ecommerce/src/widgets/button_raised.dart';
 import 'package:ecommerce/src/widgets/input_text.dart';
+import 'package:path/path.dart';
 
 class SignInView extends StatefulWidget {
   @override
@@ -69,11 +71,26 @@ class _SignInViewState extends State<SignInView> {
                   }
                   var result = await signInController.onSubmitSignIn(
                       email: _email, password: _password, isAdmin: _isAdmin);
-                  print('Screen' + result.toString());
+                  print('Screen  ' + result.toString());
+
+                  var route = ModalRoute.of(context);
+
+                  if(route!=null){
+                    print(route.settings.name);
+                  }
 
                   if (result != '') {
-                    Navigator.pushNamed(context, result);
-                    SignInController().dispose();
+                    //if(result == 'admin_home_screen') {
+                      Navigator.of(context).pushNamedAndRemoveUntil(result, ModalRoute.withName('splash_screen'),);
+                    //Navigator.pushNamedAndRemoveUntil(context, result, (Route<dynamic> route) => false);
+                      //Navigator.pushNamed(context, result);
+                      SignInController().dispose();
+                    //}
+                    //else {
+                      //Navigator.pop(context,StorageUtil.setIsLogging(true));
+                      //SignInController().dispose();
+                    //}
+
                   } else {
                     Scaffold.of(context).showSnackBar(SnackBar(
                       backgroundColor: kColorWhite,
@@ -89,7 +106,7 @@ class _SignInViewState extends State<SignInView> {
                           ),
                           Expanded(
                             child: Text(
-                              'Đăng nhập không thành công',
+                              'Đăng nhập thất bại',
                               style: kBoldTextStyle.copyWith(
                                   fontSize: FontSize.s28),
                             ),

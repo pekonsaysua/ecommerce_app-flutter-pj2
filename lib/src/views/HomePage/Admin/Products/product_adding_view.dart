@@ -200,7 +200,7 @@ class _ProductAddingViewState extends State<ProductAddingView> {
               stream: _controller.productImageStream,
               builder: (context, snapshot) => Center(
                   child: Text(
-                snapshot.hasError ? 'Error: ' + snapshot.error : '',
+                snapshot.hasError ? '' + snapshot.error : '',
                 style: kBoldTextStyle.copyWith(
                     fontSize: FontSize.s28, color: kColorRed),
               )),
@@ -281,7 +281,7 @@ class _ProductAddingViewState extends State<ProductAddingView> {
               stream: _controller.categoryStream,
               builder: (context, snapshot) => Center(
                   child: Text(
-                snapshot.hasError ? 'Error: ' + snapshot.error : '',
+                snapshot.hasError ? '' + snapshot.error : '',
                 style: kBoldTextStyle.copyWith(
                     fontSize: FontSize.s28, color: kColorRed),
               )),
@@ -369,7 +369,7 @@ class _ProductAddingViewState extends State<ProductAddingView> {
                         stream: _controller.sizeListStream,
                         builder: (context, snapshot) => Center(
                             child: Text(
-                          snapshot.hasError ? 'Error: ' + snapshot.error : '',
+                          snapshot.hasError ? '' + snapshot.error : '',
                           style: kBoldTextStyle.copyWith(
                               fontSize: FontSize.s25, color: kColorRed),
                         )),
@@ -398,7 +398,7 @@ class _ProductAddingViewState extends State<ProductAddingView> {
                         stream: _controller.colorListStream,
                         builder: (context, snapshot) => Center(
                             child: Text(
-                          snapshot.hasError ? 'Error: ' + snapshot.error : '',
+                          snapshot.hasError ? '' + snapshot.error : '',
                           style: kBoldTextStyle.copyWith(
                               fontSize: FontSize.s25, color: kColorRed),
                         )),
@@ -543,7 +543,7 @@ class _ProductAddingViewState extends State<ProductAddingView> {
                         ),
                         Expanded(
                           child: Text(
-                            'Không thể thêm sản phẩm',
+                            'Không thành công',
                             style:
                                 kBoldTextStyle.copyWith(fontSize: FontSize.s28),
                           ),

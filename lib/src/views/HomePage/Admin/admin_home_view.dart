@@ -81,12 +81,11 @@ class _AdminHomeViewState extends State<AdminHomeView> {
     ConstScreen.setScreen(context);
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-            child: Text(
+        title: Text(
           'Dashboard',
           style: kBoldTextStyle.copyWith(
               fontSize: FontSize.setTextSize(50), fontWeight: FontWeight.w900),
-        )),
+        ),
         centerTitle: false,
         backgroundColor: kColorWhite,
         automaticallyImplyLeading: false,
@@ -99,7 +98,7 @@ class _AdminHomeViewState extends State<AdminHomeView> {
                 child: GestureDetector(
                   onTap: () {
                     StorageUtil.clear();
-                    Navigator.pushNamedAndRemoveUntil(context, 'welcome_screen',
+                    Navigator.pushNamedAndRemoveUntil(context, 'splash_screen',
                         (Route<dynamic> route) => false);
                   },
                   child: Text(
@@ -158,7 +157,7 @@ class _AdminHomeViewState extends State<AdminHomeView> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => SoldAndOrderView(
-                                      title: 'Quản lý đơn hàng',
+                                      title: 'Danh sách đơn hàng',
                                     )));
                       },
                     ),

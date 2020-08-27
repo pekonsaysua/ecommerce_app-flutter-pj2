@@ -31,7 +31,7 @@ class _SoldAndOrderViewState extends State<SoldAndOrderView> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    if (widget.title == 'Quản lý đơn hàng') {
+    if (widget.title == 'Danh sách đơn hàng') {
       isOrderPage = true;
     } else {
       isOrderPage = false;
@@ -154,7 +154,7 @@ class _SoldAndOrderViewState extends State<SoldAndOrderView> {
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Thẻ ngân hàng không đúng',
+                                              'Invalid Bank Cards.',
                                               style: kBoldTextStyle.copyWith(
                                                   fontSize: FontSize.s28),
                                             ),

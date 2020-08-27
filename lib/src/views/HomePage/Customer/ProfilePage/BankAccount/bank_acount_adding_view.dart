@@ -106,7 +106,7 @@ class _BankAccountAddingViewState extends State<BankAccountAddingView> {
               stream: _controller.btnLoadStream,
               builder: (context, snapshot) {
                 return CusRaisedButton(
-                  title: 'Thêm',
+                  title: 'ADD',
                   height: 100,
                   backgroundColor: kColorBlack,
                   isDisablePress: snapshot.hasData ? snapshot.data : true,
@@ -137,7 +137,7 @@ class _BankAccountAddingViewState extends State<BankAccountAddingView> {
                             ),
                             Expanded(
                               child: Text(
-                                'Thêm thẻ thành công',
+                                'Adding Card Success.',
                                 style: kBoldTextStyle.copyWith(
                                     fontSize: FontSize.s28),
                               ),

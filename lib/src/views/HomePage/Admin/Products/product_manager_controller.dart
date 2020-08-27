@@ -53,27 +53,27 @@ class ProductManagerController {
     _btnLoadingController.sink.add(false);
     //TODO: Product name
     if (productName == null || productName == '') {
-      _productNameController.addError('Tên sản phẩm trống');
+      _productNameController.addError('Tên sản phẩm không hợp lệ');
       countError++;
     }
     //TODO: Image list
     if (imageList.length == 0) {
-      _productImageController.addError('Ảnh sản phẩm trống');
+      _productImageController.addError('Chưa chọn ảnh');
       countError++;
     }
     //TODO: Category
     if (category == 'Sub Category') {
-      _categoryController.sink.addError('Hãng sản xuất trống');
+      _categoryController.sink.addError('Chưa chọn hãng sản xuất');
       countError++;
     }
     //TODO: Size list
     if (sizeType != 'None' && sizeList.length == 0) {
-      _sizeListController.sink.addError('Kích cỡ màn hình trống');
+      _sizeListController.sink.addError('Chưa chọn kích cỡ màn hình');
       countError++;
     }
     //TODO: Color list
     if (colorList.length == 0) {
-      _colorListController.addError('Màu sản phẩm trống');
+      _colorListController.addError('Chưa chọn màu');
       countError++;
     }
     //TODO: Price
@@ -85,7 +85,10 @@ class ProductManagerController {
     if (salePrice == null || salePrice == '') {
 //      _salePriceController.addError('Price is empty');
 //      countError++;
-      salePrice = '0';
+      salePrice = price;
+    } else if (salePrice.compareTo(price) > 0) {
+        _salePriceController.addError('Phải nhỏ hơn giá sản phẩm');
+        countError++;
     }
     //TODO: Quantity
     if (quantity == null || quantity == '' || quantity == '0') {

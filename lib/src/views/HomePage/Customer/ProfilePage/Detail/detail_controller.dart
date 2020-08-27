@@ -37,22 +37,22 @@ class DetailUserInfoController {
     int countError = 0;
 
     if (fullName == '' || fullName == null) {
-      _fullNameController.sink.addError('Full name is empty.');
+      _fullNameController.sink.addError('Họ và tên trống');
       countError++;
     }
 
     if (address == '' || address == null) {
-      _addressController.sink.addError('Address is empty.');
+      _addressController.sink.addError('Địa chỉ trống');
       countError++;
     }
 
     if (phone == '' || phone == null) {
-      _phoneController.sink.addError('Phone is empty.');
+      _phoneController.sink.addError('Số điện thoai trống');
       countError++;
     }
 
     if (gender == null) {
-      _genderController.sink.addError('Gender does not choose.');
+      _genderController.sink.addError('Chưa chọn giới tính');
       countError++;
     }
     print(countError);

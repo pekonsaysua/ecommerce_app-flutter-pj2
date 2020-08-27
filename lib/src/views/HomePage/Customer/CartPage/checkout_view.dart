@@ -95,7 +95,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                                 Icons.location_on,
                                 size: ConstScreen.setSizeHeight(40),
                               ),
-                              AutoSizeText('Thông tin người nhận',
+                              AutoSizeText('Thông tin người nhận hàng:',
                                   textAlign: TextAlign.start,
                                   maxLines: 2,
                                   minFontSize: 15,
@@ -114,7 +114,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                           stream: _checkoutController.nameStream,
                           builder: (context, snapshot) {
                             return InputText(
-                              title: 'Tên người nhận',
+                              title: 'Tên',
                               errorText:
                                   snapshot.hasError ? snapshot.error : '',
                               inputType: TextInputType.text,
@@ -132,7 +132,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                           stream: _checkoutController.phoneStream,
                           builder: (context, snapshot) {
                             return InputText(
-                              title: 'Điện thoại',
+                              title: 'Số điện thoại',
                               errorText:
                                   snapshot.hasError ? snapshot.error : '',
                               inputType: TextInputType.number,
@@ -226,7 +226,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                                 width: ConstScreen.setSizeWidth(5),
                               ),
                               AutoSizeText(
-                                'Đơn hàng của bạn',
+                                'Đơn hàng của bạn:',
                                 textAlign: TextAlign.start,
                                 maxLines: 2,
                                 minFontSize: 15,
@@ -328,7 +328,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                             Expanded(
                               flex: 3,
                               child: AutoSizeText(
-                                'Tổng cộng',
+                                'TỔNG CỘNG',
                                 textAlign: TextAlign.start,
                                 maxLines: 2,
                                 minFontSize: 15,
@@ -398,7 +398,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
             stream: _checkoutController.btnLoadingStream,
             builder: (context, snapshot) {
               return CusRaisedButton(
-                title: 'Thanh toán',
+                title: 'THANH TOÁN',
                 isDisablePress: snapshot.hasData ? snapshot.data : true,
                 height: ConstScreen.setSizeHeight(150),
                 backgroundColor: Colors.orangeAccent.shade700,
@@ -436,7 +436,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                                           width: ConstScreen.setSizeWidth(5),
                                         ),
                                         AutoSizeText(
-                                          'PAYMENT:',
+                                          'THANH TOÁN:',
                                           textAlign: TextAlign.start,
                                           maxLines: 2,
                                           minFontSize: 15,
@@ -580,7 +580,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                                                                               dialog =
                                                                               new ProgressDialog(context);
                                                                           dialog.style(
-                                                                              message: 'Please wait...');
+                                                                              message: 'Vui lòng đợi...');
                                                                           dialog
                                                                               .show();
                                                                           //TODO: Show dialog loading
@@ -707,7 +707,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                                                                             100),
                                                                         child:
                                                                             Text(
-                                                                          'Không tìm thấy thẻ',
+                                                                          ' No Credit Card Found',
                                                                           style: kBoldTextStyle.copyWith(
                                                                               color: kColorBlack.withOpacity(0.8),
                                                                               fontSize: FontSize.s36,
@@ -733,7 +733,7 @@ class _ProcessingOrderViewState extends State<ProcessingOrderView> {
                                     height: ConstScreen.setSizeWidth(15),
                                   ),
                                   CusRaisedButton(
-                                    title: 'Hủy',
+                                    title: 'Huỷ',
                                     backgroundColor: kColorBlack,
                                     onPress: () {
                                       Navigator.pop(context);

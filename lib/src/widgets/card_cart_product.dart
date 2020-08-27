@@ -183,7 +183,7 @@ class CartProductCard extends StatelessWidget {
                                   children: <Widget>[
                                     //TODO: discount
                                     AutoSizeText(
-                                      'Giảm ${discount.toInt()}%',
+                                      'GIẢM ${discount.toInt()}%',
                                       maxLines: 1,
                                       minFontSize: 5,
                                       style: TextStyle(

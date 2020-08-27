@@ -2,13 +2,20 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/src/helpers/shared_preferrence.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class RatingController {
+
+  bool isFounded = false;
+
   StreamController _commentController = new StreamController.broadcast();
+
   StreamController _totalReviewController = new StreamController();
   StreamController _averageController = new StreamController();
 
   Stream get commentStream => _commentController.stream;
+
   Stream get totalReviewStream => _totalReviewController.stream;
   Stream get averageStream => _averageController.stream;
 
@@ -29,10 +36,48 @@ class RatingController {
     _commentController.sink.add('');
     int countError = 0;
 
+    Future<String> uid = StorageUtil.getUid();
+
+    Firestore.instance
+        .collection('Orders')
+        .where('status', isEqualTo: 'Completed')
+        .getDocuments()
+        .then((document) {
+      for (var snap in document.documents) {
+        if(uid == snap.data['id']){
+          Firestore.instance
+              .collection('Orders')
+              .document(snap.documentID)
+              .collection(snap.data['id'])
+              .getDocuments()
+              .then((value) {
+            for (var query in value.documents){
+              if(productId == query.data['id']){
+                print(productId);
+                isFounded = true;
+              }
+            }
+          });
+        }
+      }
+    });
+    print(isFounded);
+    Future<String> type = StorageUtil.getAccountType();
+    print(type);
+
     if (comment == '' || comment == null) {
-      _commentController.sink.addError('Comment is empty.');
+      _commentController.sink.addError('Bình luận trống');
       countError++;
     }
+    //print(countError);
+    // TODO: comment with order
+    else if(type == 'customer'){
+    if (isFounded == false){
+      _commentController.sink.addError('Bạn cần mua hàng mới được bình luận');
+      countError++;
+    }}
+
+    print(countError);
 
     // TODO: add comment
     if (countError == 0) {

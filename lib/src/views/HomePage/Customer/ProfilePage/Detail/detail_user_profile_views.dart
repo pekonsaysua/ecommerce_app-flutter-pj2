@@ -18,7 +18,7 @@ class DetailProfileView extends StatefulWidget {
 
 class _DetailProfileViewState extends State<DetailProfileView> {
   DateTime birthDay;
-  List<String> gender = ['Nam', 'Nữ'];
+  List<String> gender = ['Male', 'Female'];
   String uid = '';
   //TODO: data
 

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce/src/helpers/screen.dart';
 import 'package:ecommerce/src/helpers/shared_preferrence.dart';
-import 'package:ecommerce/src/widgets/icon_shop.dart';
+import 'package:ecommerce/src/widgets/icon_instacop.dart';
+import 'package:flutter/cupertino.dart';
+import '../../link.dart';
+
 
 class SplashView extends StatefulWidget {
   @override
@@ -20,10 +23,10 @@ class _SplashViewState extends State<SplashView> {
   }
 
   Future<String> delay() async {
-    String viewLink = 'welcome_screen';
+    String viewLink = 'customer_home_screen';
     StorageUtil.getIsLogging().then((result) async {
       if (result == null) {
-        viewLink = 'welcome_screen';
+        viewLink = 'customer_home_screen';
       } else {
         String type = await StorageUtil.getAccountType();
         if (type == 'admin') {
@@ -45,7 +48,13 @@ class _SplashViewState extends State<SplashView> {
       home: Scaffold(
         body: Container(
           width: double.infinity,
-          color: Colors.black26,
+          //color: Colors.black26,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(KImageAddress + 'welcome_wall.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,

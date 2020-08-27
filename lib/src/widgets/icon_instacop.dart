@@ -13,7 +13,7 @@ class IconInstacop extends StatelessWidget {
           style: TextStyle(
             fontSize: textSize,
             fontWeight: FontWeight.w900,
-            color: Colors.white,
+            color: Colors.blue,
           ),
           textAlign: TextAlign.center,
         ),

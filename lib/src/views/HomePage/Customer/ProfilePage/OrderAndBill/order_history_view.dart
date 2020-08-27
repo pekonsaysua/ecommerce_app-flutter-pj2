@@ -29,7 +29,7 @@ class _OrderHistoryViewState extends State<OrderHistoryView>
         backgroundColor: kColorWhite,
         // TODO: Quantity Items
         title: Text(
-          'Đơn hàng',
+          'Lịch sử đơn hàng',
           style: TextStyle(
               color: kColorBlack,
               fontSize: FontSize.setTextSize(32),
@@ -69,7 +69,7 @@ class _OrderHistoryViewState extends State<OrderHistoryView>
                 size: ConstScreen.setSizeHeight(30),
               ),
               child: Text(
-                'Hủy bỏ',
+                'Huỷ bỏ',
                 style: kBoldTextStyle.copyWith(fontSize: FontSize.s28),
               ),
             )

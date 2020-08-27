@@ -26,17 +26,17 @@ class ChangePwdController {
     _confirmPwdController.sink.add('');
     int countError = 0;
     if (currentPwd == '' || currentPwd == null || currentPwd.length < 6) {
-      _currentPwdSController.sink.addError('Mật khẩu hiện tại không đúng.');
+      _currentPwdSController.sink.addError('Mật khẩu hiện tại không hợp lệ');
       countError++;
     }
 
     if (newPwd == '' || newPwd == null || currentPwd.length < 6) {
-      _newPwdController.sink.addError('Mật khẩu mới không đúng');
+      _newPwdController.sink.addError('Mật khẩu mới không hợp lệ');
       countError++;
     }
 
     if (confirmPwd == '' || confirmPwd == null || currentPwd.length < 6) {
-      _confirmPwdController.sink.addError('Mật khẩu xác nhận không đúng');
+      _confirmPwdController.sink.addError('Mật khẩu xác nhận không hợp lệ');
       countError++;
     }
 
@@ -48,7 +48,7 @@ class ChangePwdController {
     String originalPwd;
     originalPwd = await StorageUtil.getPassword();
     if (originalPwd != Util.encodePassword(currentPwd)) {
-      _currentPwdSController.addError('Mật khẩu hiện tại không chính xác');
+      _currentPwdSController.addError('Mật khẩu hiện tại không đúng');
       countError++;
     }
 

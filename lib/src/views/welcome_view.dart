@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/src/helpers/screen.dart';
+import 'package:ecommerce/src/services/stripe_payment.dart';
 import 'package:ecommerce/src/widgets/button_tap.dart';
-import 'package:ecommerce/src/widgets/icon_shop.dart';
+import 'package:ecommerce/src/widgets/icon_instacop.dart';
 
 import '../../link.dart';
 

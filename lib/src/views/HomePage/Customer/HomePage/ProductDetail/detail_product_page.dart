@@ -48,7 +48,7 @@ class _DetailOfProductPageState extends State<DetailOfProductPage>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Mô tả:',
+                'Description:',
                 style: TextStyle(
                     fontSize: FontSize.setTextSize(40),
                     fontWeight: FontWeight.bold),

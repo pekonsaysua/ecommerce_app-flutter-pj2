@@ -268,7 +268,7 @@ class _RatingProductPageState extends State<RatingProductPage>
                                                   // Button Add
                                                   Expanded(
                                                     child: CusRaisedButton(
-                                                      title: 'Hủy',
+                                                      title: 'Huỷ',
                                                       onPress: () {
                                                         Navigator.pop(context);
                                                       },

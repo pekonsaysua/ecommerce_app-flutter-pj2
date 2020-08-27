@@ -79,7 +79,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                 stream: _controller.confirmPwdStream,
                 builder: (context, snapshot) {
                   return InputText(
-                    title: 'Xác nhận mật khẩu mới',
+                    title: 'Nhập lại mật khẩu mới',
                     errorText: snapshot.hasError ? snapshot.error : '',
                     isPassword: true,
                     onValueChange: (value) {
@@ -125,7 +125,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                               ),
                               Expanded(
                                 child: Text(
-                                  'Your password has been changed.',
+                                  'Mật khẩu đã được thay đổi',
                                   style: kBoldTextStyle.copyWith(
                                       fontSize: FontSize.s28),
                                 ),
@@ -151,7 +151,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                               ),
                               Expanded(
                                 child: Text(
-                                  'Thay đổi không thành công',
+                                  'Không thành công',
                                   style: kBoldTextStyle.copyWith(
                                       fontSize: FontSize.s28),
                                 ),

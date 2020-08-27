@@ -89,24 +89,24 @@ class AdminProductCard extends StatelessWidget {
                           content: quantity,
                         ),
                         TitleWidget(
-                          title: 'Giá: ',
+                          title: 'Price: ',
                           content: '${Util.intToMoneyType(productPrice)} VND',
                         ),
                         TitleWidget(
-                          title: 'Giá khuyến mại: ',
+                          title: 'SalePrice: ',
                           content:
                               '${Util.intToMoneyType(productSalePrice)} VND',
                         ),
                         TitleWidget(
-                          title: 'Hãng sản xuất: ',
+                          title: 'Hãng: ',
                           content: category,
                         ),
                         TitleWidget(
-                          title: 'Ngày tạo: ',
+                          title: 'Thời gian: ',
                           content: createAt,
                         ),
                         TitleWidget(
-                          title: 'Màn hình: ',
+                          title: 'Kích cỡ: ',
                           content: (productSizeList != null)
                               ? '$productSizeList'
                               : 'None',

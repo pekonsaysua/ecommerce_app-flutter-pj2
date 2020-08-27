@@ -197,7 +197,7 @@ class OrderAdminCard extends StatelessWidget {
                             width: ConstScreen.setSizeWidth(7),
                           ),
                           Text(
-                            'Hủy bỏ',
+                            'Huỷ bỏ',
                             style: kBoldTextStyle.copyWith(
                                 color: isEnableCancel
                                     ? kColorRed

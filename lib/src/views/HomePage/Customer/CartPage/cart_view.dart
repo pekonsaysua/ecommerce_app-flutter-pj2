@@ -225,9 +225,9 @@ class _CartViewState extends State<CartView> {
                           ),
                           Positioned(
                             top: ConstScreen.setSizeHeight(650),
-                            left: ConstScreen.setSizeWidth(250),
+                            left: ConstScreen.setSizeWidth(190),
                             child: Text(
-                              'Không có đơn hàng',
+                              'Không có đơn hàng nào',
                               style: kBoldTextStyle.copyWith(
                                   color: kColorBlack.withOpacity(0.8),
                                   fontSize: FontSize.s36,
@@ -303,7 +303,7 @@ class _CartViewState extends State<CartView> {
             Expanded(
               flex: 1,
               child: CusRaisedButton(
-                title: 'Địa chỉ giao hàng',
+                title: 'MUA HÀNG',
                 backgroundColor: kColorBlack,
                 height: ConstScreen.setSizeHeight(150),
                 onPress: () {

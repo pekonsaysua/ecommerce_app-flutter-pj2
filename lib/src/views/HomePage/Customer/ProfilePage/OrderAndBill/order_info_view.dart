@@ -50,7 +50,7 @@ class _OrderInfoViewState extends State<OrderInfoView> {
                 children: <Widget>[
                   //TODO: Order ID
                   TitleWidget(
-                    title: 'ID sản phẩm',
+                    title: 'ID',
                     content: widget.id,
                   ),
                   TitleWidget(
@@ -75,7 +75,7 @@ class _OrderInfoViewState extends State<OrderInfoView> {
                         '${Util.intToMoneyType(int.parse(widget.orderInfo.total) + int.parse(widget.orderInfo.shipping) )} VND',
                   ),
                   TitleWidget(
-                    title: 'Ship',
+                    title: 'Phí ship',
                     content:
                         '+${Util.intToMoneyType(int.parse(widget.orderInfo.shipping))} VND',
                   ),
@@ -99,7 +99,7 @@ class _OrderInfoViewState extends State<OrderInfoView> {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: AutoSizeText(
-                          'Đơn hàng đã bị hủy!',
+                          'Đơn hàng đã bị huỷ!',
                           maxLines: 1,
                           minFontSize: 10,
                           style: kBoldTextStyle.copyWith(
@@ -217,7 +217,7 @@ class _OrderInfoViewState extends State<OrderInfoView> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: AutoSizeText(
-                    'Địa chỉ nhận',
+                    'Địa chỉ giao hàng',
                     maxLines: 1,
                     minFontSize: 10,
                     style: kBoldTextStyle.copyWith(

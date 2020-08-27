@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce/src/helpers/colors_constant.dart';
 
 class ClothingPickingList {
-  // TODO: Tee size
+  // TODO: Laptop size
   static const List<String> LapSize = [
     '17.3\"',
     '15.6\"',
@@ -11,7 +11,7 @@ class ClothingPickingList {
     '12\"',
   ];
 
-  //TODO: Pant size
+  //TODO: Phone size
   static const List<String> PhoneSize = [
     '4.7\"',
     '5\"',
@@ -20,7 +20,7 @@ class ClothingPickingList {
     '6.3\"',
   ];
 
-//TODO: Shoes size
+//TODO: Tablet size
   static const List<String> TabSize = [
     '7\"',
     '7.6\"',
@@ -48,4 +48,5 @@ class ClothingPickingList {
         return kColorWhite;
     }
   }
+
 }

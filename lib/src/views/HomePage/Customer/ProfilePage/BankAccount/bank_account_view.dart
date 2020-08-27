@@ -152,9 +152,9 @@ class _BankAccountViewState extends State<BankAccountView> {
                             ),
                             Positioned(
                               top: ConstScreen.setSizeHeight(650),
-                              left: ConstScreen.setSizeWidth(190),
+                              left: ConstScreen.setSizeWidth(180),
                               child: Text(
-                                ' No Credit Card Found',
+                                'Không có thẻ ngân hàng',
                                 style: kBoldTextStyle.copyWith(
                                     color: kColorBlack.withOpacity(0.8),
                                     fontSize: FontSize.s36,

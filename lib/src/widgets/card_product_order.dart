@@ -50,7 +50,7 @@ class ProductOrderDetail extends StatelessWidget {
             ),
             //TODO: Size
             TitleWidget(
-              title: 'Màn hình: ',
+              title: 'Kích cỡ màn hình: ',
               content: size,
               isSpaceBetween: false,
             ),
@@ -65,9 +65,9 @@ class ProductOrderDetail extends StatelessWidget {
                     : MainAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
-                    flex: 4,
+                    flex: 5,
                     child: AutoSizeText(
-                      'Màu:',
+                      'Màu sắc:',
                       maxLines: 1,
                       minFontSize: 10,
                       style: kBoldTextStyle.copyWith(
@@ -105,7 +105,7 @@ class ProductOrderDetail extends StatelessWidget {
             ),
             //TODO: SubTotal
             TitleWidget(
-              title: 'Thành tiền: ',
+              title: 'Giá tiền: ',
               content: '$subPriceMoneyType VND',
               isSpaceBetween: false,
             ),

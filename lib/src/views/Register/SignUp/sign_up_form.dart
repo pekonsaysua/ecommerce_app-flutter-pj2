@@ -14,8 +14,8 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-  List<String> gender = ['Nam', 'Nữ'];
-  String genderData = 'Chọn giới tính';
+  List<String> gender = ['Male', 'Female'];
+  String genderData = 'Choose Gender';
 
   bool _isRegisterLoading = true;
   SignUpController signUpController = new SignUpController();
@@ -34,7 +34,7 @@ class _SignUpViewState extends State<SignUpView> {
         StreamBuilder(
           stream: signUpController.fullNameStream,
           builder: (context, snapshot) => InputText(
-            title: 'Họ và tên',
+            title: 'Tên',
             errorText: snapshot.hasError ? snapshot.error : '',
             onValueChange: (value) {
               _fullName = value;
@@ -48,7 +48,7 @@ class _SignUpViewState extends State<SignUpView> {
         StreamBuilder(
           stream: signUpController.phoneStream,
           builder: (context, snapshot) => InputText(
-            title: 'Số điện thoại',
+            title: 'Điện thoại',
             inputType: TextInputType.number,
             errorText: snapshot.hasError ? snapshot.error : '',
             onValueChange: (value) {
@@ -138,7 +138,7 @@ class _SignUpViewState extends State<SignUpView> {
                             ),
                             Expanded(
                               child: Text(
-                                'Đăng ký thành công',
+                                'Adding User Complete',
                                 style: kBoldTextStyle.copyWith(
                                     fontSize: FontSize.s28),
                               ),
@@ -162,7 +162,7 @@ class _SignUpViewState extends State<SignUpView> {
                           ),
                           Expanded(
                             child: Text(
-                              'Đăng ký thất bại',
+                              'Sign Up failed.',
                               style: kBoldTextStyle.copyWith(
                                   fontSize: FontSize.s28),
                             ),

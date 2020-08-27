@@ -6,6 +6,8 @@ import 'package:ecommerce/src/views/Register/SignUp/sign_up_form.dart';
 import 'package:ecommerce/src/widgets/button_raised.dart';
 
 class RegisterView extends StatefulWidget {
+
+
   @override
   _RegisterViewState createState() => _RegisterViewState();
 }

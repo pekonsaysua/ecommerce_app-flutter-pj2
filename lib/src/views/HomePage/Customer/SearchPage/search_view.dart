@@ -114,7 +114,7 @@ class _SearchViewState extends State<SearchView>
     return ListView(
       shrinkWrap: true,
       children: <Widget>[
-        //TODO: Clothing
+        //TODO: Laptop
         ExpansionTile(
           title: Text('LAPTOP',
               style: TextStyle(
@@ -171,7 +171,7 @@ class _SearchViewState extends State<SearchView>
             ),
           ],
         ),
-        //TODO: Shoes
+        //TODO: Phone
         ExpansionTile(
           title: Text(
             'PHONE',
@@ -207,7 +207,7 @@ class _SearchViewState extends State<SearchView>
             ),
           ],
         ),
-        //TODO: Accessories
+        //TODO: Tablet
         ExpansionTile(
           title: Text(
             'Tablet',

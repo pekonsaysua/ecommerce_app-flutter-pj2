@@ -6,6 +6,8 @@ import 'package:ecommerce/src/helpers/shared_preferrence.dart';
 import 'package:ecommerce/src/views/HomePage/Customer/ProfilePage/Detail/detail_user_profile_views.dart';
 import 'package:ecommerce/src/widgets/button_raised.dart';
 
+import '../../../../helpers/colors_constant.dart';
+
 class ProfileView extends StatefulWidget {
   @override
   _ProfileViewState createState() => _ProfileViewState();
@@ -65,7 +67,7 @@ class _ProfileViewState extends State<ProfileView>
           ),
           //TODO: Bank Account
           CusRaisedButton(
-            title: 'Tài khoản ngân hàng',
+            title: 'Thẻ ngân hàng',
             backgroundColor: kColorWhite,
             height: 100,
             onPress: () {
@@ -75,16 +77,46 @@ class _ProfileViewState extends State<ProfileView>
           // TODO: Sign Out
           CusRaisedButton(
             title: 'Đăng xuất',
-            backgroundColor: kColorBlack,
+            backgroundColor: kColorWhite,
             height: 100,
             onPress: () {
-              StorageUtil.clear();
-              Navigator.pushNamedAndRemoveUntil(
-                  context, 'welcome_screen', (Route<dynamic> route) => false);
+              showAlertDialog(context);
             },
           ),
         ],
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the buttons
+    Widget cancelButton = FlatButton(
+      child: Text("Không"),
+      onPressed:  () {
+        Navigator.of(context, rootNavigator: true).pop();
+      },
+    );
+    Widget continueButton = FlatButton(
+      child: Text("Đồng ý"),
+      onPressed:  () {
+        StorageUtil.clear();
+        Navigator.pushNamedAndRemoveUntil(context, 'splash_screen', (Route<dynamic> route) => false);
+      },
+    );
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      content: Text("Bạn có chắc chắn muốn đăng xuất?"),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 

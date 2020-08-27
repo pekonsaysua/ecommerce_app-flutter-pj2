@@ -46,7 +46,7 @@ class _PaymentCompleteViewState extends State<PaymentCompleteView> {
                           fontSize: FontSize.setTextSize(75)),
                     ),
                     Text(
-                      'Thanh toán thành công',
+                      'Mua hàng thành công',
                       textAlign: TextAlign.center,
                       style: kNormalTextStyle.copyWith(
                           fontSize: FontSize.setTextSize(40)),
@@ -69,7 +69,7 @@ class _PaymentCompleteViewState extends State<PaymentCompleteView> {
                           horizontal: ConstScreen.setSizeWidth(30),
                         ),
                         child: CusRaisedButton(
-                          title: 'Tiếp tục mua hàng',
+                          title: 'TIẾP TỤC MUA HÀNG',
                           backgroundColor: kColorGreen,
                           onPress: () {
                             Navigator.pushNamedAndRemoveUntil(

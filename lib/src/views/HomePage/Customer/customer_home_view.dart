@@ -1,3 +1,4 @@
+import 'package:ecommerce/src/views/Register/SignIn/sign_in_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce/src/helpers/TextStyle.dart';
@@ -8,6 +9,7 @@ import 'package:ecommerce/src/views/homePage/customer/homePage/cus_home_view.dar
 import 'package:ecommerce/src/views/homePage/customer/profilePage/profile_view.dart';
 import 'package:ecommerce/src/views/homePage/customer/searchPage/search_view.dart';
 import 'package:ecommerce/src/views/homePage/customer/wishlistPage/wishlist_view.dart';
+import 'package:ecommerce/src/views/HomePage/Customer/HomePage/product_list_view.dart';
 
 class CustomerHomeView extends StatefulWidget {
   @override
@@ -16,12 +18,12 @@ class CustomerHomeView extends StatefulWidget {
 
 class _CustomerHomeViewState extends State<CustomerHomeView> {
   final tabsScreen = [
-    CustomerHomePageView(),
+    ProductListView(search: '',),
     SearchView(),
     WishListView(),
     ProfileView(),
   ];
-  final tabsTitle = [' ', 'Tìm kiếm', 'Danh sách yêu thích', 'Thông tin người dùng'];
+  final tabsTitle = [' ', 'Search', 'Danh sách yêu thích', 'Thông tin người dùng'];
   int indexScreen = 0;
   bool _isLogging;
   final pageController = PageController();
@@ -91,8 +93,9 @@ class _CustomerHomeViewState extends State<CustomerHomeView> {
         selectedItemColor: kColorBlack,
         currentIndex: indexScreen,
         onTap: (index) {
+          print(index);
           print('onTap ' + _isLogging.toString());
-          if (_isLogging == false && index > 1) {
+          if (_isLogging == false && index >1) {
             Navigator.pushNamed(context, 'register_screen');
           } else {
             setState(() {
@@ -113,7 +116,7 @@ class _CustomerHomeViewState extends State<CustomerHomeView> {
                 FontAwesomeIcons.search,
                 size: ConstScreen.sizeXL,
               ),
-              title: Text('Tìm kiếm')),
+              title: Text('Search')),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.favorite,

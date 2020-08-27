@@ -40,32 +40,32 @@ class SignUpController {
     _isConfirmPwdController.sink.add('');
 
     if (fullName == '' || fullName == null) {
-      _isFullNameController.sink.addError('Họ tên trống');
+      _isFullNameController.sink.addError('Invalid full name.');
       countError++;
     }
 
     if (phone == '' || phone == null || !validators.isPhoneNumber(phone)) {
-      _isPhoneController.sink.addError('Số điện thoại không đúng');
+      _isPhoneController.sink.addError('Invalid phone.');
       countError++;
     }
 
     if (!validators.isValidEmail(email)) {
-      _isEmailController.sink.addError('Email không đúng');
+      _isEmailController.sink.addError('Invalid email address.');
       countError++;
     }
 
     if (!validators.isPassword(password)) {
-      _isPasswordController.sink.addError('Mật khẩu không đúng');
+      _isPasswordController.sink.addError('Invalid password.');
       countError++;
     }
 
     if (!validators.isPassword(confirmPwd)) {
-      _isConfirmPwdController.sink.addError('Mật khẩu không đúng');
+      _isConfirmPwdController.sink.addError('Invalid confirm password.');
       countError++;
     }
     if (password != confirmPwd) {
       _isConfirmPwdController.sink
-          .addError('Mật khẩu xác nhận phải giống mật khẩu');
+          .addError('Confirm passoword does not match.');
       countError++;
     }
 
@@ -106,7 +106,7 @@ class SignUpController {
         _isBtnLoadingController.sink.add(true);
         return true;
       } catch (e) {
-        _isEmailController.sink.addError('Email đã được sử dụng');
+        _isEmailController.sink.addError('The email address is already in use');
         _isBtnLoadingController.sink.add(true);
       }
     }

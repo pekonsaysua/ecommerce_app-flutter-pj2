@@ -43,7 +43,7 @@ class _DetailBannerScreenState extends State<ProductListView> {
           .snapshots();
     } else {
       setState(() {
-        title = 'SẢN PHẨM';
+        title = 'WELCOME';
       });
       return Firestore.instance
           .collection('Products')
@@ -66,7 +66,7 @@ class _DetailBannerScreenState extends State<ProductListView> {
       });
     } else {
       setState(() {
-        title = 'SẢN PHẨM';
+        title = 'WELCOME';
       });
     }
   }
@@ -94,7 +94,7 @@ class _DetailBannerScreenState extends State<ProductListView> {
                   if (value != null) {
                     Navigator.pushNamed(context, 'customer_cart_page');
                   } else {
-                    Navigator.pushNamed(context, 'register_screen');
+                    Navigator.pushNamed(context, 'register_screen', arguments: ModalRoute.of(context).settings.name);
                   }
                 });
               },
@@ -141,7 +141,7 @@ class _DetailBannerScreenState extends State<ProductListView> {
                               top: ConstScreen.setSizeHeight(650),
                               left: ConstScreen.setSizeWidth(160),
                               child: Text(
-                                'Không tìm thấy sản phẩm',
+                                'Không có sản phẩm',
                                 style: kBoldTextStyle.copyWith(
                                     color: kColorBlack.withOpacity(0.8),
                                     fontSize: FontSize.s36,
@@ -192,6 +192,7 @@ class _DetailBannerScreenState extends State<ProductListView> {
                                     product: product,
                                   ),
                                 ),
+
                               );
                             },
                           );

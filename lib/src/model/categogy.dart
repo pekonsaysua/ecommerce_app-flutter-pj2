@@ -20,4 +20,7 @@ class Category {
     'Apple',
     'Samsung',
   ];
+  void addCategory(){
+
+  }
 }

@@ -69,7 +69,18 @@ class ProductController {
     _loveWishlistStreamController.add(true);
     return true;
   }
-
+  removeProductFromWishlist({@required Product product}) async {
+    String userUid = await StorageUtil.getUid();
+    Firestore.instance
+        .collection('Wishlists')
+        .document(userUid)
+        .collection(userUid)
+        .document(product.id)
+        .delete();
+    //removeProduct(doc['id']);
+    _loveWishlistStreamController.add(true);
+    return true;
+  }
   void dispose() {
     _sizeStreamController.close();
     _loveWishlistStreamController.close();

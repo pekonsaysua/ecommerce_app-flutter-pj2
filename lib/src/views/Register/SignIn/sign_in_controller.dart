@@ -30,12 +30,12 @@ class SignInController {
     _isPassword.sink.add('Ok');
 
     if (!validators.isValidEmail(email)) {
-      _isEmail.sink.addError('Email không đúng');
+      _isEmail.sink.addError('Email không hợp lệ');
       countError++;
     }
 
     if (!validators.isPassword(password)) {
-      _isPassword.addError('Mật khẩu không đúng');
+      _isPassword.addError('Mật khẩu không hợp lệ');
       countError++;
     }
 
@@ -66,9 +66,8 @@ class SignInController {
           print(user.toJson());
 
           //TODO: Navigator
-
-          //TODO: Admin Sign In
-          if (snapshot.data['type'] == 'admin') {
+            //TODO: Admin Sign In
+            if (snapshot.data['type'] == 'admin') {
               result = 'admin_home_screen';
               //TODO: Add data to shared preference
               StorageUtil.setUid(uid);
@@ -78,7 +77,7 @@ class SignInController {
               StorageUtil.setAccountType('admin');
               StorageUtil.setPassword(password);
             }
-          else {
+           else {
             //TODO: Customer Sign In
             if (snapshot.data['type'] == 'customer') {
               result = 'customer_home_screen';

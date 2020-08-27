@@ -18,7 +18,7 @@ class _EditDetailViewState extends State<EditDetailView> {
   DateTime birthDay;
   bool _isBirthdayConfirm = false;
   bool _isEditPage = false;
-  List<String> gender = ['Nam', 'Nữ'];
+  List<String> gender = ['Male', 'Female'];
   //TODO: data
   String _fullName;
   String _address;
@@ -33,7 +33,7 @@ class _EditDetailViewState extends State<EditDetailView> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'Chỉnh sửa thông tin',
+          'Chỉnh sửa thông tin người dùng',
           style: kBoldTextStyle.copyWith(
             fontSize: FontSize.setTextSize(32),
           ),
@@ -247,7 +247,7 @@ class _EditDetailViewState extends State<EditDetailView> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Update profile failed.',
+                                    'Cập nhật thông tin không thành công',
                                     style: kBoldTextStyle.copyWith(
                                         fontSize: FontSize.s28),
                                   ),

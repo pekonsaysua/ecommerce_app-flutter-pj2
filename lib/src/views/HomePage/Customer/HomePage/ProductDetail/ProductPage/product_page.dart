@@ -14,6 +14,8 @@ import 'package:ecommerce/src/views/HomePage/Customer/HomePage/ProductDetail/ima
 import 'package:ecommerce/src/widgets/button_raised.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 
+import '../../../../../../helpers/colors_constant.dart';
+
 class ProductPage extends StatefulWidget {
   ProductPage({this.product, Key key}) : super(key: key);
   final Product product;
@@ -189,6 +191,7 @@ class _ProductPageState extends State<ProductPage>
                               _isLoveCheck = true;
                             });
                             Scaffold.of(context).showSnackBar(SnackBar(
+                              duration: const Duration(milliseconds: 800),
                               backgroundColor: kColorWhite,
                               content: Row(
                                 children: <Widget>[
@@ -203,6 +206,39 @@ class _ProductPageState extends State<ProductPage>
                                   Expanded(
                                     child: Text(
                                       'Đã thêm sản phẩm vào danh sách yêu thích',
+                                      style: kBoldTextStyle.copyWith(
+                                          fontSize: FontSize.s28),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ));
+                          }
+                        });
+                      } else {
+                        _controller
+                            .removeProductFromWishlist(product: widget.product)
+                            .then((value) {
+                          if (value) {
+                            setState(() {
+                              _isLoveCheck = false;
+                            });
+                            Scaffold.of(context).showSnackBar(SnackBar(
+                              duration: const Duration(milliseconds: 800),
+                              backgroundColor: kColorWhite,
+                              content: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.cancel,
+                                    color: kColorRed,
+                                    size: ConstScreen.setSizeWidth(50),
+                                  ),
+                                  SizedBox(
+                                    width: ConstScreen.setSizeWidth(20),
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      'Xóa khỏi danh sách yêu thích',
                                       style: kBoldTextStyle.copyWith(
                                           fontSize: FontSize.s28),
                                     ),
@@ -393,7 +429,7 @@ class _ProductPageState extends State<ProductPage>
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Lỗi thêm',
+                                              'Không thành công',
                                               style: kBoldTextStyle.copyWith(
                                                   fontSize: FontSize.s28),
                                             ),
